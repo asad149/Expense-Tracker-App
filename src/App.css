@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+* {
+  background-color: #efefef;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 400px;
+  min-height: 450px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 15px 50px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.balance {
+  float: left;
+  padding: 10px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.balance-amount {
+  margin-top: -18px;
+  font-weight: 20px;
+}
+
+.expense-container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  background-color: white;
+  border-radius: 5px;
+}
+
+.expense-container p {
+  background-color: white;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.expense-container .income {
+  background-color: white;
+  color: green;
+}
+
+.expense-container .expense {
+  background-color: white;
+  color: red;
+}
+
+.transaction-history {
+  margin-top: 10px;
+  padding: 10px;
+}
+.transaction-history h5 {
+  font-size: 15px;
+}
+
+.trnsaction-list {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-submit {
+  background-color: blueviolet;
+  color: white;
+}
+.btn-submit:hover {
+  background-color: blueviolet;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.trnsaction-list > li {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 0 10px gray;
+  padding: 10px 15px;
+  background-color: white;
+  margin: 8px;
+  border-radius: 4px;
+}
+.trnsaction-list span {
+  background-color: white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transaction-form input {
+  padding: 10px;
+  margin: 5px;
+}
+
+.App {
+  text-align: center;
 }
