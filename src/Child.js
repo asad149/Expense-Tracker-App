@@ -11,7 +11,7 @@ const Child = () => {
     event.preventDefault();
 
     if (Number(newAmount) === 0) {
-      alert("Please Enter valid Value");
+      alert("Please Enter Valid Value");
       return false;
     }
 
