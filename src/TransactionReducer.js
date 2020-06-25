@@ -4,6 +4,12 @@ const TransactionReducer = (state, action) => {
       return [action.payload, ...state];
     }
 
+    case "DELETE_TRANSACTION": {
+      const newState = state.filter((trans) => trans.id !== action.payload.id);
+
+      return newState;
+    }
+
     default:
       return state;
   }

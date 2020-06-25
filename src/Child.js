@@ -2,7 +2,9 @@ import React, { useContext, useState } from "react";
 import { TransactionContext } from "./TransactionContext";
 
 const Child = () => {
-  let { transactions, addTransaction } = useContext(TransactionContext);
+  let { transactions, addTransaction, deleteTransaction } = useContext(
+    TransactionContext
+  );
 
   let [newAmount, setAmount] = useState(0);
   let [newDesc, setDesc] = useState("");
@@ -18,8 +20,15 @@ const Child = () => {
     addTransaction({
       amount: Number(newAmount),
       desc: newDesc,
+      id: transactions.length,
     });
   };
+
+  function handleDelete(ind) {
+    deleteTransaction({
+      index: ind,
+    });
+  }
 
   function getIncome() {
     let income = 0;
@@ -66,14 +75,18 @@ const Child = () => {
         </div>
 
         <div className="transaction-history">
-          <h5>History</h5>
+          <h5>History </h5>
           <hr />
         </div>
 
         <ul className="trnsaction-list">
+          <p>Click List to Delete</p>
           {transactions.map((transObj, ind) => {
             return (
               <li
+                onClick={() => {
+                  handleDelete(transObj.id);
+                }}
                 className={transObj.amount > 0 ? "text-success" : "text-danger"}
                 key={ind}
               >

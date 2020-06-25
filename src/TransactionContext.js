@@ -14,6 +14,16 @@ export const TransactionProvider = ({ children }) => {
       payload: {
         amount: transObj.amount,
         desc: transObj.desc,
+        id: transObj.id,
+      },
+    });
+  }
+
+  function deleteTransaction(transObj) {
+    dispatch({
+      type: "DELETE_TRANSACTION",
+      payload: {
+        id: transObj.index,
       },
     });
   }
@@ -23,6 +33,7 @@ export const TransactionProvider = ({ children }) => {
       value={{
         transactions: state,
         addTransaction,
+        deleteTransaction,
       }}
     >
       {children}
